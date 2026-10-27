@@ -1,0 +1,30 @@
+# Dependencies for running the experiments reported in the paper.
+#
+# The experiments ran on CSCS Alps (node with 4x NVIDIA GH200, aarch64) with Python 3.11.
+# The pins below are the project environment at the time of the experiments. The exact
+# torch/vllm/transformers builds of the Alps environment were not recorded; vllm 0.11.0
+# requires torch 2.8.0. Install the torch/vllm builds matching your platform and CUDA.
+# Other versions may run, but can change the scores: generation depends on vllm, and the
+# sampled test documents depend on datasets.
+
+# --- Model inference ---
+vllm==0.11.0
+torch==2.8.0
+transformers==4.57.1
+
+# --- Data and evaluation ---
+datasets==3.1.0
+pandas==2.3.3
+nervaluate-disco @ git+https://github.com/coree/nervaluate-disco.git@c6369945db5fa139e9459dd7d90c49ee51ad50d5
+
+# --- Prompting and API models (OpenAI, Anthropic, Mistral, Google) ---
+langchain-core==1.0.5
+langchain-openai==1.0.3
+langchain-anthropic==1.0.4
+langchain-mistralai==1.0.1
+langchain-google-genai==3.0.3
+
+# --- Config and utilities ---
+PyYAML==6.0.1
+python-decouple==3.8
+loguru==0.7.2

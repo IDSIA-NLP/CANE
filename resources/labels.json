@@ -1,0 +1,527 @@
+{    
+    "ncbi_disease": {
+        "task": "ner",
+        "source": "",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-Disease": 1, 
+            "I-Disease": 2
+        },
+        "label_to_semantic_label": {
+            "Disease": "DISEASE"
+        },
+        "min_unique_labels": 1,
+        "tag_column": "ner_tags"
+    },
+
+    "conll2003": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/conll2003",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0, 
+            "B-PER": 1, 
+            "I-PER": 2, 
+            "B-ORG": 3, 
+            "I-ORG": 4, 
+            "B-LOC": 5, 
+            "I-LOC": 6, 
+            "B-MISC": 7, 
+            "I-MISC": 8
+        },
+        "label_to_semantic_label": {
+            "PER": "PERSON",
+            "ORG": "ORGANIZATION",
+            "LOC": "LOCATION",
+            "MISC": "MISCELLANEOUS"
+        },
+        "min_unique_labels": 4,
+        "tag_column": "ner_tags"
+    },
+
+    "tner/bionlp2004": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/tner/bionlp2004",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-DNA": 1,
+            "I-DNA": 2,
+            "B-protein": 3,
+            "I-protein": 4,
+            "B-cell_type": 5,
+            "I-cell_type": 6,
+            "B-cell_line": 7,
+            "I-cell_line": 8,
+            "B-RNA": 9,
+            "I-RNA": 10
+        },
+        "label_to_semantic_label": {
+            "DNA": "DNA",
+            "protein": "PROTEIN",
+            "cell_type": "CELL_TYPE",
+            "cell_line": "CELL_LINE",
+            "RNA": "RNA"
+        },
+        "min_unique_labels": 2,
+        "tag_column": "tags"
+    },
+
+    "tner/wnut2017": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/tner/wnut2017",
+        "complexity": "simple",
+        "label_to_id": {
+            "B-corporation": 0,
+            "B-creative-work": 1,
+            "B-group": 2,
+            "B-location": 3,
+            "B-person": 4,
+            "B-product": 5,
+            "I-corporation": 6,
+            "I-creative-work": 7,
+            "I-group": 8,
+            "I-location": 9,
+            "I-person": 10,
+            "I-product": 11,
+            "O": 12
+        },
+        "label_to_semantic_label": {
+            "corporation": "CORPORATION",
+            "creative-work": "CREATIVE_WORK",
+            "group": "GROUP",
+            "location": "LOCATION",
+            "person": "PERSON",
+            "product": "PRODUCT"
+        },
+        "min_unique_labels": 4,
+        "tag_column": "tags"
+    },
+
+    "tner/bc5cdr": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/tner/bc5cdr",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-Chemical": 1,
+            "B-Disease": 2,
+            "I-Disease": 3,
+            "I-Chemical": 4
+        },
+        "label_to_semantic_label": {
+            "Chemical": "CHEMICAL",
+            "Disease": "DISEASE"
+        },
+        "min_unique_labels": 2,
+        "tag_column": "tags"
+    },
+    
+    "tner/fin": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/tner/fin",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-PER": 1,
+            "B-LOC": 2,
+            "B-ORG": 3,
+            "B-MISC": 4,
+            "I-PER": 5,
+            "I-LOC": 6,
+            "I-ORG": 7,
+            "I-MISC": 8
+        },
+        "label_to_semantic_label": {
+            "PER": "PERSON",
+            "LOC": "LOCATION",
+            "ORG": "ORGANIZATION",
+            "MISC": "MISCELLANEOUS"
+        },
+        "min_unique_labels": 3,
+        "tag_column": "tags"
+    },
+
+    "tner/ontonotes5": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/tner/ontonotes5",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-CARDINAL": 1,
+            "B-DATE": 2,
+            "I-DATE": 3,
+            "B-PERSON": 4,
+            "I-PERSON": 5,
+            "B-NORP": 6,
+            "B-GPE": 7,
+            "I-GPE": 8,
+            "B-LAW": 9,
+            "I-LAW": 10,
+            "B-ORG": 11,
+            "I-ORG": 12, 
+            "B-PERCENT": 13,
+            "I-PERCENT": 14, 
+            "B-ORDINAL": 15, 
+            "B-MONEY": 16, 
+            "I-MONEY": 17, 
+            "B-WORK_OF_ART": 18, 
+            "I-WORK_OF_ART": 19, 
+            "B-FAC": 20, 
+            "B-TIME": 21, 
+            "I-CARDINAL": 22, 
+            "B-LOC": 23, 
+            "B-QUANTITY": 24, 
+            "I-QUANTITY": 25, 
+            "I-NORP": 26, 
+            "I-LOC": 27, 
+            "B-PRODUCT": 28, 
+            "I-TIME": 29, 
+            "B-EVENT": 30,
+            "I-EVENT": 31,
+            "I-FAC": 32,
+            "B-LANGUAGE": 33,
+            "I-PRODUCT": 34,
+            "I-ORDINAL": 35,
+            "I-LANGUAGE": 36
+        },
+        "label_to_semantic_label": {
+            "CARDINAL": "CARDINAL",
+            "DATE": "DATE",
+            "PERSON": "PERSON",
+            "NORP": "NATIONALITIES_RELIGIONS_POLITICAL",
+            "GPE": "GEOPOLITICAL",
+            "LAW": "LAW",
+            "ORG": "ORG",
+            "PERCENT": "PERCENT",
+            "ORDINAL": "ORDINAL",
+            "MONEY": "MONEY",
+            "WORK_OF_ART": "WORK_OF_ART",
+            "FAC": "FACILITY",
+            "TIME": "TIME",
+            "QUANTITY": "QUANTITY",
+            "LOC": "LOCATION",
+            "PRODUCT": "PRODUCT",
+            "EVENT": "EVENT",
+            "LANGUAGE": "LANGUAGE"
+        },
+        "min_unique_labels": 5,
+        "tag_column": "tags"
+    },
+
+    "tner/wikineural": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/tner/wikineural",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-PER": 1,
+            "I-PER": 2,
+            "B-LOC": 3,
+            "I-LOC": 4,
+            "B-ORG": 5,
+            "I-ORG": 6,
+            "B-ANIM": 7,
+            "I-ANIM": 8,
+            "B-BIO": 9,
+            "I-BIO": 10,
+            "B-CEL": 11,
+            "I-CEL": 12,
+            "B-DIS": 13,
+            "I-DIS": 14,
+            "B-EVE": 15,
+            "I-EVE": 16,
+            "B-FOOD": 17,
+            "I-FOOD": 18,
+            "B-INST": 19,
+            "I-INST": 20,
+            "B-MEDIA": 21,
+            "I-MEDIA": 22,
+            "B-PLANT": 23,
+            "I-PLANT": 24,
+            "B-MYTH": 25,
+            "I-MYTH": 26,
+            "B-TIME": 27,
+            "I-TIME": 28,
+            "B-VEHI": 29,
+            "I-VEHI": 30,
+            "B-MISC": 31,
+            "I-MISC": 32
+        },
+        "label_to_semantic_label": {
+            "PER": "PERSON",
+            "LOC": "LOCATION",
+            "ORG": "ORGANIZATION",
+            "ANIM": "ANIMAL",
+            "BIO": "BIOLOGICAL",
+            "CEL": "CELLULAR",
+            "DIS": "DISEASE",
+            "EVE": "EVENT",
+            "FOOD": "FOOD",
+            "INST": "INSTITUTION",
+            "MEDIA": "MEDIA",
+            "PLANT": "PLANT",
+            "MYTH": "MYTHOLOGICAL",
+            "TIME": "TIME",
+            "VEHI": "VEHICLE",
+            "MISC": "MISCELLANEOUS"
+        },
+        "min_unique_labels": 5,
+        "tag_column": "tags",
+        "sup": "en"
+    },
+
+    "tner/multinerd": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/tner/multinerd",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-PER": 1,
+            "I-PER": 2,
+            "B-LOC": 3,
+            "I-LOC": 4,
+            "B-ORG": 5,
+            "I-ORG": 6,
+            "B-ANIM": 7,
+            "I-ANIM": 8,
+            "B-BIO": 9,
+            "I-BIO": 10,
+            "B-CEL": 11,
+            "I-CEL": 12,
+            "B-DIS": 13,
+            "I-DIS": 14,
+            "B-EVE": 15,
+            "I-EVE": 16,
+            "B-FOOD": 17,
+            "I-FOOD": 18,
+            "B-INST": 19,
+            "I-INST": 20,
+            "B-MEDIA": 21,
+            "I-MEDIA": 22,
+            "B-PLANT": 23,
+            "I-PLANT": 24,
+            "B-MYTH": 25,
+            "I-MYTH": 26,
+            "B-TIME": 27,
+            "I-TIME": 28,
+            "B-VEHI": 29,
+            "I-VEHI": 30,
+            "B-SUPER": 31,
+            "I-SUPER": 32,
+            "B-PHY": 33,
+            "I-PHY": 34
+        },
+        "label_to_semantic_label": {
+            "PER": "PERSON",
+            "LOC": "LOCATION",
+            "ORG": "ORGANIZATION",
+            "ANIM": "ANIMAL",
+            "BIO": "BIOLOGICAL",
+            "CEL": "CELLULAR",
+            "DIS": "DISEASE",
+            "EVE": "EVENT",
+            "FOOD": "FOOD",
+            "INST": "INSTITUTION",
+            "MEDIA": "MEDIA",
+            "PLANT": "PLANT",
+            "MYTH": "MYTHOLOGICAL",
+            "TIME": "TIME",
+            "VEHI": "VEHICLE",
+            "SUPER": "SUPERHERO",
+            "PHY": "PHYSICAL"
+        },
+        "min_unique_labels": 5,
+        "tag_column": "tags",
+        "sup": "en"
+    },
+
+    "unimelb-nlp/wikiann": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/unimelb-nlp/wikiann",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-PER": 1,
+            "I-PER": 2,
+            "B-ORG": 3,
+            "I-ORG": 4,
+            "B-LOC": 5,
+            "I-LOC": 6
+        },
+        "label_to_semantic_label": {
+            "PER": "PERSON",
+            "ORG": "ORGANIZATION",
+            "LOC": "LOCATION"
+        },
+        "min_unique_labels": 2,
+        "tag_column": "ner_tags",
+        "sup": "en"
+    },
+
+    "unimelb-nlp/wikiann:de": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/unimelb-nlp/wikiann",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-PER": 1,
+            "I-PER": 2,
+            "B-ORG": 3,
+            "I-ORG": 4,
+            "B-LOC": 5,
+            "I-LOC": 6
+        },
+        "label_to_semantic_label": {
+            "PER": "PERSON",
+            "ORG": "ORGANISATION",
+            "LOC": "ORT"
+        },
+        "min_unique_labels": 2,
+        "tag_column": "ner_tags",
+        "sup": "de"
+    },
+    "unimelb-nlp/wikiann:fr": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/unimelb-nlp/wikiann",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-PER": 1,
+            "I-PER": 2,
+            "B-ORG": 3,
+            "I-ORG": 4,
+            "B-LOC": 5,
+            "I-LOC": 6
+        },
+        "label_to_semantic_label": {
+            "PER": "PERSONNE",
+            "ORG": "ORGANISATION",
+            "LOC": "LIEU"
+        },
+        "min_unique_labels": 2,
+        "tag_column": "ner_tags",
+        "sup": "fr"
+    },
+    "unimelb-nlp/wikiann:zh": {
+        "task": "ner",
+        "source": "https://huggingface.co/datasets/unimelb-nlp/wikiann",
+        "complexity": "simple",
+        "label_to_id": {
+            "O": 0,
+            "B-PER": 1,
+            "I-PER": 2,
+            "B-ORG": 3,
+            "I-ORG": 4,
+            "B-LOC": 5,
+            "I-LOC": 6
+        },
+        "label_to_semantic_label": {
+            "PER": "人物",
+            "ORG": "组织",
+            "LOC": "地点"
+        },
+        "min_unique_labels": 2,
+        "tag_column": "ner_tags",
+        "sup": "zh"
+    },
+
+    "cadec": {
+        "task": "ner",
+        "source": "local",
+        "complexity": "complex",
+        "label_to_semantic_label": {
+            "ADR": "ADVERSE_DRUG_REACTION"
+        },
+        "min_unique_labels": 1
+    },
+
+    "share2013": {
+        "task": "ner",
+        "source": "local",
+        "complexity": "complex",
+        "label_to_semantic_label": {
+            "Disorder": "DISORDER"
+        },
+        "min_unique_labels": 1
+    },
+
+    "share2014": {
+        "task": "ner",
+        "source": "local",
+        "complexity": "complex",
+        "label_to_semantic_label": {
+            "Disorder": "DISORDER"
+        },
+        "min_unique_labels": 1
+    },
+
+    "share2013_paragraphs": {
+        "task": "ner",
+        "source": "local",
+        "complexity": "complex",
+        "label_to_semantic_label": {
+            "Disorder": "DISORDER"
+        },
+        "min_unique_labels": 1
+    },
+
+    "share2014_paragraphs": {
+        "task": "ner",
+        "source": "local",
+        "complexity": "complex",
+        "label_to_semantic_label": {
+            "Disorder": "DISORDER"
+        },
+        "min_unique_labels": 1
+    },
+
+    "genia": {
+        "task": "ner",
+        "source": "local",
+        "complexity": "complex",
+        "label_to_semantic_label": {
+            "DNA_N/A": "DNA_UNCLASSIFIED",
+            "DNA_domain_or_region": "DNA_DOMAIN_OR_REGION",
+            "DNA_family_or_group": "DNA_FAMILY_OR_GROUP",
+            "DNA_molecule": "DNA_MOLECULE",
+            "DNA_substructure": "DNA_SUBSTRUCTURE",
+            "RNA_N": "RNA_NAMED",
+            "RNA_N/A": "RNA_UNCLASSIFIED",
+            "RNA_domain_or_region": "RNA_DOMAIN_OR_REGION",
+            "RNA_family_or_group": "RNA_FAMILY_OR_GROUP",
+            "RNA_molecule": "RNA_MOLECULE",
+            "RNA_substructure": "RNA_SUBSTRUCTURE",
+            "amino_acid_monomer": "AMINO_ACID",
+            "atom": "ATOM",
+            "body_part": "BODY_PART",
+            "carbohydrate": "CARBOHYDRATE",
+            "cell_component": "CELL_COMPONENT",
+            "cell_line": "CELL_LINE",
+            "cell_type": "CELL_TYPE",
+            "entity": "ENTITY",
+            "inorganic": "INORGANIC",
+            "lipid": "LIPID",
+            "mono_cell": "UNICELLULAR_ORGANISM",
+            "multi_cell": "MULTICELLULAR_ORGANISM",
+            "nucleotide": "NUCLEOTIDE",
+            "other_artificial_source": "ARTIFICIAL_SOURCE",
+            "other_name": "OTHER",
+            "other_organic_compound": "ORGANIC_COMPOUND",
+            "peptide": "PEPTIDE",
+            "polynucleotide": "POLYNUCLEOTIDE",
+            "protein_N": "PROTEIN_NAMED",
+            "protein_N/A": "PROTEIN_UNCLASSIFIED",
+            "protein_complex": "PROTEIN_COMPLEX",
+            "protein_domain_or_region": "PROTEIN_DOMAIN_OR_REGION",
+            "protein_family_or_group": "PROTEIN_FAMILY_OR_GROUP",
+            "protein_molecule": "PROTEIN_MOLECULE",
+            "protein_substructure": "PROTEIN_SUBSTRUCTURE",
+            "protein_subunit": "PROTEIN_SUBUNIT",
+            "tissue": "TISSUE",
+            "virus": "VIRUS"
+        },
+        "min_unique_labels": 5
+    }
+}

@@ -1,0 +1,139 @@
+# config.yml
+#
+# Experiment configuration for src/run.py. The defaults run a small example:
+# one model, one dataset and two CANE formats. To reproduce the paper,
+# uncomment the models, formats and datasets you need (see README).
+# The general settings below are the ones used in the paper.
+
+resource_path: ../resources/
+results_path: ../data/results_scratch/
+
+# Few-shot examples per dataset and label definitions (in resource_path).
+# For the discontinuous-demonstration ablation (paper, Appendix F.2) use
+# paper_examples_disco_ablation.json.
+examples_file: paper_examples.json
+labels_file: labels.json
+
+cache_dir: /tmp/hf_cache
+
+task: "ner"
+
+# Number of test documents per dataset
+num_test_samples: 1000
+
+# Number of few-shot examples in the prompt (paper: 5; two-shot ablation, Appendix F.3: 2)
+num_examples: 5
+
+# Dataset-specific overrides of num_examples (full-document SHARE corpora are very long)
+dataset_overrides:
+  share2013:
+    num_examples: 1
+  share2014:
+    num_examples: 1
+
+# Batch size for batch generation
+batch_size: 512
+
+# Number of retries for connection errors only
+retry_attempts: 3
+
+# Random seed to replicate experiments
+seed: 42
+
+# Models are run one after another. Local models use the "vllm:" prefix.
+# Append ":thinking" to a Qwen3 model to enable thinking mode (Appendix F.1).
+model_names:
+  # --- Models in the paper (larger models first for memory management) ---
+  # - vllm:meta-llama/Llama-3.3-70B-Instruct
+  # - vllm:mistralai/Mixtral-8x7B-Instruct-v0.1
+  # - vllm:Qwen/Qwen3-30B-A3B
+  # - vllm:mistralai/Mistral-Small-24B-Instruct-2501
+  # - vllm:Qwen/Qwen3-8B
+  # - vllm:mistralai/Mistral-7B-Instruct-v0.3
+  # - vllm:google/gemma-3-4b-it
+  # - vllm:meta-llama/Llama-3.2-3B-Instruct
+  - vllm:Qwen/Qwen3-1.7B
+
+  # --- Thinking mode (Appendix F.1) ---
+  # - vllm:Qwen/Qwen3-8B:thinking
+  # - vllm:Qwen/Qwen3-1.7B:thinking
+
+  # --- Model versions (Appendix F.6) ---
+  # - vllm:mistralai/Mistral-7B-Instruct-v0.1
+  # - vllm:Qwen/Qwen2.5-7B-Instruct
+
+# Describe the purpose of the run in a few words (saved with the results).
+notes: "Example run"
+
+ner:
+  output_formats:
+    # --- Per-token label sequences ---
+    # - iob
+    # - iob_sentence
+    # - stanford_ner
+    # - stanford_ner_iob
+    # - csv
+
+    # --- Inline markup ---
+    # - pubannotation_inline
+    # - inline_bracketed
+    # - gpt_ner
+    # - symbolic_tagging
+    # - xml_simple
+    # - xml_ref
+
+    # --- Offset-based ---
+    # - pubannotation
+    # - csv_complex
+    # - json
+    # - brat
+
+    # --- Entity enumeration ---
+    # - json_simple
+    # - slender
+
+    # --- CANE ---
+    - cane_base
+    # - cane_context
+    # - cane_disco
+    - cane_full
+
+    # --- Token-level ablations (Section 8) ---
+    # - cane_base_abl_backticks
+    # - cane_base_abl_header
+    # - cane_base_abl_newline
+    # - pt_format
+
+  datasets:
+    # --- Simple datasets (flat entities, loaded from Hugging Face) ---
+    - conll2003
+    # - ncbi_disease
+    # - tner/bionlp2004
+    # - tner/wnut2017
+    # - tner/bc5cdr
+    # - tner/fin
+    # - tner/ontonotes5
+    # - tner/wikineural
+    # - tner/multinerd
+    # - unimelb-nlp/wikiann
+
+    # --- Cross-lingual (Appendix F.7) ---
+    # - unimelb-nlp/wikiann:de
+    # - unimelb-nlp/wikiann:fr
+    # - unimelb-nlp/wikiann:zh
+
+    # --- Complex datasets (nested, overlapping, discontinuous; need data preparation, see README) ---
+    # - cadec
+    # - genia
+    # - share2013_paragraphs   # requires PhysioNet access
+    # - share2014_paragraphs   # requires PhysioNet access
+
+    # --- Full-document SHARE corpora (not used in the paper; too long) ---
+    # - share2013
+    # - share2014
+
+  # Map corpus labels to readable names, e.g. B-PER -> PERSON (paper: True; Appendix F.4: False)
+  use_semantic_labels: True
+
+  input_formats:
+    - white_space
