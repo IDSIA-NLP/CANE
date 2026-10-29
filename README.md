@@ -6,7 +6,15 @@ We evaluate 21 output formats for few-shot NER with open-weight LLMs and propose
 
 ![Figure 1](assets/figure1.png)
 
+## Using CANE in your own work
 
+This repository reproduces the paper's experiments. To use CANE in your own projects, use the
+[cane-format](https://github.com/coree/cane-format) library (`pip install cane-format`,
+[documentation](https://coree.github.io/cane-format/)): it writes few-shot examples as CANE,
+parses model output back into character spans, and converts between CANE and common
+annotation formats. The library is developed separately from this code, so its parsing can
+differ in details from the paper's implementation; use this repository to reproduce the
+paper's numbers.
 
 ## Setup
 
